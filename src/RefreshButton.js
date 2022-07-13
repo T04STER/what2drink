@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function RefreshButton() {
   return (
-    <button onClick={()=>window.location.reload()}>Refresh</button>
-  )
+    <button type="button" onClick={() => window.location.reload()}>
+      Refresh
+    </button>
+  );
 }
 
-export default RefreshButton
+export default RefreshButton;

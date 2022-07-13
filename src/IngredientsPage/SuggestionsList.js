@@ -1,23 +1,31 @@
-import React from 'react'
+import React from 'react';
 
 function SuggestionsList(props) {
-  const suggested = props.suggestionsList;
+  const {
+    suggestionsList,
+    suggestedHighlighted,
+    addIngredientFunction,
+  } = props;
   return (
     <ul className="suggestions-list">
-        {
-          suggested.map(suggestion =>{
-            return (                      
-            <li onClick={props.addIngredientFunction(suggestion)}
-                key={suggestion.name}
-                className={suggestion===props.suggestedHighlighted ? 'suggestions-list-highlight':''}
-            >        
-                {suggestion.name}
-            </li>
-            )
-            })
-        }
+      {suggestionsList.map((suggestion) => {
+        return (
+          <li
+            role="button"
+            onClick={addIngredientFunction(suggestion)}
+            key={suggestion.name}
+            className={
+              suggestion === suggestedHighlighted
+                ? 'suggestions-list-highlight'
+                : ''
+            }
+          >
+            {suggestion.name}
+          </li>
+        );
+      })}
     </ul>
-  )
+  );
 }
 
-export default SuggestionsList
+export default SuggestionsList;
