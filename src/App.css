@@ -1,0 +1,62 @@
+.App {
+  margin: 0;
+}
+
+.drink-container {
+  
+  margin: auto;
+  padding:  8px;
+  border-radius: 16px;
+
+  width: 512px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  font-size: 16px;
+  background: linear-gradient(#900048, #ff4057);
+}
+
+.drink-container > img{
+  width: 248px;
+  height: 248px;
+  border-radius: 16px;
+  margin: 0;
+}
+
+.drink-container > p{
+  width: 90%;
+}
+
+.drink-ingredients {
+  width: 100%;
+  gap: 16px;
+  margin: 0;
+}
+.drink-ingredients > p {
+  text-align: center;
+  margin: 4px;
+}
+.drink-ingredients > ul {
+  width: 70%;
+  margin: auto;
+  columns: 3;
+  gap: 20px;
+}
+
+button {
+  width: 128px;
+  height: 32px;
+  
+  border: none;
+  background-color: #ff8260;
+  color: white;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff5b2d;
+}

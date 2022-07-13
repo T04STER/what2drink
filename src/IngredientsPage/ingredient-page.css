@@ -1,0 +1,100 @@
+.ingredients-page-container {
+    
+  margin: auto;
+  
+  width: 512px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+}
+
+.ingredients-list-container {
+  padding:  20px;
+  border-radius: 16px;
+  width: 100%;
+  font-size: 16px;
+  background: linear-gradient(#900048, #ff4057);
+  margin: auto;
+}
+
+.input-container {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.ingredients-input {
+    width: 100%;
+    background: linear-gradient(#900048, #ff4057);
+    color: whitesmoke;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.suggestions-list {
+    display: block;
+    position: absolute;
+    text-align: left;
+    list-style: none;
+    margin-top: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.suggestions-list > li {
+    background-color: #ff8260;
+    border-top: 1px dashed #900048;
+    cursor: pointer;
+}
+
+.suggestions-list > li:hover,
+.suggestions-list-highlight {
+  background-color: #ff4e1d !important;
+  border-top: 1px dashed #ac0a5b;
+  color: lightgray !important;
+  cursor: pointer;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ingredients-element-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  
+  border-radius:  16px;
+  border: 1px dashed #900048;
+}
+.ingredients-element-name {
+  display: block;
+  padding: 4px;
+}
+.ingredients-element-remove-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 4px;
+}
+
+.ingredients-send-btn {
+  margin: auto;
+  margin-top: 16px;
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+  
+}

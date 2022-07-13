@@ -1,0 +1,38 @@
+.navbar {
+    width: 75%;
+    margin: auto;
+    margin-top: 0;
+    border-radius: 16px;
+}
+.navbar > ul {
+    display: flex;
+    list-style: none;
+    height: 64px;
+    justify-content: space-around;
+}
+.navbar > ul > li {
+    height: 64px;
+} 
+
+.navbar button {
+    background-color: #900048;
+    border: 1px dashed black;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 16px;
+    
+    font-size: 22px;
+
+} 
+
+.active {
+    border: 1px solid white !important;
+}
+
+.navbar button:hover {
+    background-color: #700038;
+    color: lightgrey;
+    border: 1px solid white;
+} 
