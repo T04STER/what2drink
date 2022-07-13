@@ -7,7 +7,7 @@ function SuggestionsList(props) {
         {
           suggested.map(suggestion =>{
             return (                      
-            <li onClick={()=>props.addIngredientFunction(suggestion)}
+            <li onClick={props.addIngredientFunction(suggestion)}
                 key={suggestion.name}
                 className={suggestion===props.suggestedHighlighted ? 'suggestions-list-highlight':''}
             >        

@@ -11,13 +11,15 @@ export default class CocktailDBProvider {
       }
     };
       
-    return await axios.request(options)
-      .then((response) => {
-        return response.data.drinks[0];
-      })
-      .catch(
-        (error) => console.error(error)
+    const res = axios.request(options)
+    .then((response) => {
+      return response.data.drinks[0];
+    })
+    .catch(
+      (error) => console.error(error)
       );
+    
+    return res;
   }
   
   static async getDrinksByIngredients(ingredients) {
@@ -32,13 +34,15 @@ export default class CocktailDBProvider {
     }
     };
 
-    return await axios.request(options)
+    const res = await axios.request(options)
       .then((response) => {
         return response.data.drinks;
       })
       .catch(
         (error) => console.error(error)
       );
+
+    return res;
   }
 
   static async getDrinkByID(drinkID) {
@@ -52,13 +56,13 @@ export default class CocktailDBProvider {
     }
     };
     
-    return await axios.request(options)
+    const res = await axios.request(options)
       .then((response) => {
         return response.data.drinks[0];
       })
       .catch(
         (error) => console.error(error)
       );
-
+    return res;
   }
 }

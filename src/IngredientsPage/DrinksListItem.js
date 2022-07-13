@@ -33,7 +33,7 @@ function DrinksListItem(props) {
             <p>Ingredients:</p>
             <ul>
                 {
-                ingredients.map(function (ingredient) {
+                ingredients.map((ingredient) => {
                     return (
                     <li key={ingredient.toString()}>
                         {ingredient}

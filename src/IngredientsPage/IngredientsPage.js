@@ -39,7 +39,7 @@ function IngredientsPage() {
     
   }
 
-  function handleKeyDown(event) {    
+  const handleKeyDown = React.useCallback((event) => {    
     
 
     if (input.length < 3 || suggested.length === 0)
@@ -91,9 +91,9 @@ function IngredientsPage() {
         return;
       }
     }
-  }
+  });
 
-  function addIngredient(ingredient) {
+  const addIngredient = React.useCallback((ingredient)=>{
     for (let i = 0; i < usedIngredients.length; i++) {
       if (usedIngredients[i].name===ingredient.name) return;
     }
@@ -101,13 +101,13 @@ function IngredientsPage() {
     setInput('');
     setSuggested([]);
     setSuggestedHighlighted(null);
-  }
+  });
 
   function removeIngredient(ingredient) {
     setUsedIngredients((usedIngredients) => usedIngredients.filter(element => element.name!==ingredient.name));
   }
 
-  function handleRequest() {
+  const handleRequest = React.useCallback(() => {
     CocktailDBProvider.getDrinksByIngredients(usedIngredients)
       .then(res => {
         setDrinks(res);
@@ -115,7 +115,7 @@ function IngredientsPage() {
     );
     console.log(drinks);
   }
-
+  );
 
   return (
     <div className="ingredients-page-container">
@@ -152,7 +152,7 @@ function IngredientsPage() {
           {
             usedIngredients.length > 0? (
               <button
-               onClick={ () => handleRequest()}
+               onClick={handleRequest}
                className="ingredients-send-btn"
               >
                Find me a drink!
