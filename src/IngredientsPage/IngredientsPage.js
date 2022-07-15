@@ -8,6 +8,7 @@ import DrinksList from './DrinksList';
 
 function IngredientsPage() {
   const ingredientList = ingredients.ingredients;
+
   const [usedIngredients, setUsedIngredients] = useState([]);
   const [suggested, setSuggested] = useState([]);
   const [suggestedHighlighted, setSuggestedHighlighted] =
@@ -49,16 +50,16 @@ function IngredientsPage() {
     );
   }
 
-  const handleInputChange = React.useCallback((event) => {
+  const handleInputChange = (event) => {
     setInput(event.target.value);
     setSuggested([]);
     setSuggestedHighlighted(null);
     if (input.length > 2) {
       addSuggestions(input);
     }
-  });
+  };
 
-  const handleKeyDown = React.useCallback((event) => {
+  const handleKeyDown = (event) => {
     if (input.length < 3 || suggested.length === 0) return;
 
     if (event.key === 'Enter') {
@@ -111,27 +112,22 @@ function IngredientsPage() {
         return;
       }
     }
-  });
+  };
 
-  const handleRequest = React.useCallback(() => {
+  const handleRequest = () => {
     CocktailDBProvider.getDrinksByIngredients(usedIngredients).then(
       (res) => {
         setDrinks(res);
       }
     );
-    console.log(drinks);
-  });
+  };
 
-  const handleAddIngredient = React.useCallback(
-    (ingredient) => (e) => {
-      addIngredient(ingredient);
-    }
-  );
-  const handleRemoveIngredient = React.useCallback(
-    (ingredient) => (e) => {
-      removeIngredient(ingredient);
-    }
-  );
+  const handleAddIngredient = (ingredient) => (e) => {
+    addIngredient(ingredient);
+  };
+  const handleRemoveIngredient = (ingredient) => (e) => {
+    removeIngredient(ingredient);
+  };
 
   return (
     <div className="ingredients-page-container">

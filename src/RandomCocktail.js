@@ -9,19 +9,15 @@ function RandomCocktail() {
   useEffect(() => {
     CocktailDBProvider.getRandomDrink().then((res) => {
       setDrink(res);
-      console.log(res);
       const drinkKeys = Object.keys(res);
 
       drinkKeys.forEach((key) => {
-        if (key.includes('Ingredient') && drink[key] !== null) {
-          setIngredients((ingredientz) => [
-            ...ingredientz,
-            drink[key],
-          ]);
+        if (key.includes('Ingredient') && res[key] !== null) {
+          setIngredients((ingredientz) => [...ingredientz, res[key]]);
         }
       });
     });
-  });
+  }, []);
 
   return (
     <>
@@ -33,10 +29,8 @@ function RandomCocktail() {
           <div className="drink-ingredients">
             <p>Ingredients:</p>
             <ul>
-              {ingredients.map((ingredient) => {
-                return (
-                  <li key={ingredient.toString()}>{ingredient}</li>
-                );
+              {ingredients.map((ingredient, idx) => {
+                return <li key={idx.toString()}>{ingredient}</li>;
               })}
             </ul>
           </div>

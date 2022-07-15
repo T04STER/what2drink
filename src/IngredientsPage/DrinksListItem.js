@@ -24,7 +24,7 @@ function DrinksListItem(props) {
     <div className="drinks-list-item">
       <h3>{drink.strDrink}</h3>
       <img src={drink.strDrinkThumb} alt="no img ;c" />
-      <button type="button" onClick={() => handleClick()}>
+      <button type="button" onClick={handleClick()}>
         Get more info
       </button>
       {ingredients.length > 0 ? (
